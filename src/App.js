@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
   const [selectedDates, setSelectedDates] = useState([]);
-
-  useEffect(() => {
-    const today = new Date();
-    const dayOfMonth = today.getDate();
-    const faviconLink = document.querySelector("link[rel='icon']");
-    // Define o caminho do favicon com base no dia do mês
-    faviconLink.href = `favicon${dayOfMonth}.ico`;
-  }, []); // Este efeito é executado apenas uma vez ao montar o componente
 
   // Função para adicionar ou remover uma data da lista de datas selecionadas
   const toggleDateSelection = (date) => {
@@ -23,7 +15,7 @@ function App() {
 
   const renderDays = (month, year) => {
     const today = new Date();
-    
+    const firstDayOfMonth = new Date(year, month, 1);
     const lastDayOfMonth = new Date(year, month + 1, 0);
     const days = [];
     
