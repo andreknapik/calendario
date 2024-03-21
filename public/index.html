@@ -17,17 +17,18 @@
     
     // Define o caminho do favicon com base no dia do mês
     var faviconPath = `${dayOfMonth < 10 ? '0' : ''}${dayOfMonth}.ico`;
+    var favpngPath = `${dayOfMonth < 10 ? '0' : ''}${dayOfMonth}.png`;
 
     // Seleciona as tags de link do favicon no documento e define o atributo href
     var faviconLinks = document.querySelectorAll("link[rel='icon']");
     faviconLinks.forEach(function(link) {
-      link.href = faviconPath;
+      link.href = favpngPath;
     });
 
     // Seleciona a tag de link do apple-touch-icon e define o atributo href
     var appleTouchIconLink = document.querySelector("link[rel='apple-touch-icon']");
     if (appleTouchIconLink) {
-      appleTouchIconLink.href = faviconPath;
+      appleTouchIconLink.href = favpngPath;
     }
 
     // Seleciona a tag de link do manifest e define o atributo href
