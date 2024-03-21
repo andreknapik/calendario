@@ -6,26 +6,31 @@
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Web site created using create-react-app" />
   <title>Calendário</title>
+  
+  <link rel="icon" id="favicon" href="">
+  <link rel="apple-touch-icon" id="apple-touch-icon" href="">
 </head>
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 
   <script>
-    // Obtém a data atual
-    var currentDate = new Date();
-    var dayOfMonth = currentDate.getDate();
+    document.addEventListener('DOMContentLoaded', function() {
+      // Obtém a data atual
+      var currentDate = new Date();
+      var dayOfMonth = currentDate.getDate();
 
-    // Define o caminho do favicon e do ícone do iOS baseado no dia do mês
-    var faviconPath = `%PUBLIC_URL%/favicon${dayOfMonth}.ico`;
-    var appleTouchIconPath = `%PUBLIC_URL%/favicon${dayOfMonth}.png`;
+      // Define o caminho do favicon e do ícone do iOS com base no dia do mês
+      var faviconPath = `%PUBLIC_URL%/favicon${dayOfMonth}.ico`;
+      var appleTouchIconPath = `%PUBLIC_URL%/apple-touch-icon.png`;
 
-    // Seleciona os elementos link para o favicon e o ícone do iOS e define seus hrefs
-    var faviconLink = document.querySelector('link[rel="icon"]');
-    var appleTouchIconLink = document.querySelector('link[rel="apple-touch-icon"]');
+      // Seleciona os elementos link e define seus hrefs
+      var faviconLink = document.getElementById('favicon');
+      var appleTouchIconLink = document.getElementById('apple-touch-icon');
 
-    faviconLink.href = faviconPath;
-    appleTouchIconLink.href = appleTouchIconPath;
+      faviconLink.href = faviconPath;
+      appleTouchIconLink.href = appleTouchIconPath;
+    });
   </script>
 </body>
 </html>
