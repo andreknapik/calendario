@@ -15,7 +15,7 @@ function App() {
 
   const renderDays = (month, year) => {
     const today = new Date();
-    const firstDayOfMonth = new Date(year, month, 1);
+  
     const lastDayOfMonth = new Date(year, month + 1, 0);
     const days = [];
     
